@@ -1,0 +1,5 @@
+#!/bin/bash
+
+time=$(TZ=America/Los_Angeles date)
+
+echo "<html><body><h1>hi there</h1>$time</body></html>" > /var/www/html/index.html
