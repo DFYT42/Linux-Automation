@@ -1,0 +1,11 @@
+#! /bin/bash
+##find a user in /etc/passwd, take input and search
+
+echo "Hello, who are you looking for?"
+read myvar
+finduser=$(grep -ic "$myvar" /etc/passwd );
+if [ $finduser -gt 0 ] ;
+    then echo "I found $myvar";
+else
+    echo "I didn't find $myvar";
+fi
