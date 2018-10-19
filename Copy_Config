@@ -1,0 +1,6 @@
+#! /bin/bash
+
+cd /etc/httpd/conf.d/
+for file in $(ls -p /etc/httpd/conf.d | grep -v ) do
+  echo "backing uo $file" cp $file $file.org
+done
