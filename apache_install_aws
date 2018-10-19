@@ -1,3 +1,5 @@
+##Extra Credit: https://www.digitalocean.com/community/tutorials/how-to-use-the-htaccess-file
+
 yum -y install httpd
 systemctl enable httpd
 systemctl start httpd
