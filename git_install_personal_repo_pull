@@ -4,4 +4,33 @@
 #Pulls down your personal repository 
 #Sets your username, repo-name and email address
 #Hint: yum -y install git, git clone http//your_repo
+#https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
+yum -y install git
+
+##Global git configurations
+echo "What is repo URL that you want to clone? "
+read myvar
+git clone "$myvar"
+echo "What is global user name? "
+read myvar2
+git config --global user.name "$myvar2"
+echo "What is global user email? "
+read myvar3
+git config --global user.email "$myvar3"
+echo "What is global editor? "
+read myvar4
+git config --global core.editor "$myvar4"
+
+##Local repo configurations
+current_repo=${myvar##*/}
+cd $current_repo
+echo "What is user name? "
+read cur_repo_var
+git config user.name "$cur_repo_var"
+echo "What is user email? "
+read cur_repo_var2
+git config user.email "$cur_repo_var2"
+echo "What is editor? "
+read cur_repo_var3
+git config core.editor "$cur_repo_var3"
