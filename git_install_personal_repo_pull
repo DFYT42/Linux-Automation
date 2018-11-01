@@ -1,0 +1,7 @@
+#! /bin/bash
+
+#Installs git
+#Pulls down your personal repository 
+#Sets your username, repo-name and email address
+#Hint: yum -y install git, git clone http//your_repo
+
