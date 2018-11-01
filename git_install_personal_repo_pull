@@ -6,7 +6,7 @@
 #Hint: yum -y install git, git clone http//your_repo
 #https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-yum -y install git
+sudo yum -y install git
 
 ##Global git configurations
 echo "What is repo URL that you want to clone? "
