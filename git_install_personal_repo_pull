@@ -1,11 +1,13 @@
 #! /bin/bash
 
-#Installs git
-#Pulls down your personal repository 
-#Sets your username, repo-name and email address
-#Hint: yum -y install git, git clone http//your_repo
+#Checks if git is installed--if not, installs git
+#Using user input, asks for repo URL user wants to clone and:
+####clones repo, sets global username, global user email address, and global editor
+#Parses cloned repo URL, CDs into new repo, and:
+####sets local username, local user email address, and local editor
 #https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
+##Checks if user wants git installed
 echo "Do you need to install git? "
 read needgit
 if "$needgit" = "yes"
@@ -13,29 +15,36 @@ then
     sudo yum -y install git
 fi
 
-##Global git configurations
+##Clone Repo
 echo "What is repo URL that you want to clone? "
+read myclone
+git clone "$myclone"
+
+##Checks if user wants global git configurations
+echo "Do you want to set global configurations? "
 read myvar
-git clone "$myvar"
-echo "What is global user name? "
-read myvar2
-git config --global user.name "$myvar2"
-echo "What is global user email? "
-read myvar3
-git config --global user.email "$myvar3"
-echo "What is global editor? "
-read myvar4
-git config --global core.editor "$myvar4"
+if "$myvar" = "yes"
+then
+    echo "What is global user name? "
+    read myvar2
+    git config --global user.name "$myvar2"
+    echo "What is global user email? "
+    read myvar3
+    git config --global user.email "$myvar3"
+    echo "What is global editor? "
+    read myvar4
+    git config --global core.editor "$myvar4"
+fi
 
 ##Local repo configurations
-current_repo=${myvar##*/}
+current_repo=${myclone##*/}
 cd $current_repo
-echo "What is user name? "
+echo "What is local user name? "
 read cur_repo_var
 git config user.name "$cur_repo_var"
-echo "What is user email? "
+echo "What is local user email? "
 read cur_repo_var2
 git config user.email "$cur_repo_var2"
-echo "What is editor? "
+echo "What is local editor? "
 read cur_repo_var3
 git config core.editor "$cur_repo_var3"
