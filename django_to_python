@@ -14,15 +14,15 @@
     os.system('yum install python36')
     os.system('virtualenv -p python36 django')
     
-    ##still in 2.7.5 && need to source to 3.6
-    os.system('python --version')
-    os.system('source django/bin/activate')
+    os.system('source /opt/django/django/bin/activate && pip install django')
     
-    os.system('pip install django')
-    os.system('django-admin --version')
+    ##still in 2.7.5 && need to source to 3.6
+    os.chdir('/opt/django')
+    os.system('source /opt/django/django/bin/activate ' + \
+              '&& django-admin --version ' + \
+              '&& django-admin startproject project1')
     
     ##start project
-    os.system('django-admin startproject project1')
     
     ##change ownership from root to a user
     os.system('chown -R <user> django  ##if you don't know this--: who')
