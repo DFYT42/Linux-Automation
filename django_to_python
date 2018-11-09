@@ -1,0 +1,35 @@
+    #! usr/bin/python
+    
+    import os
+    
+    os.system('sudo su  ')
+    os.system('yum -y install python-pip')
+    os.system('pip install virtualenv')
+    os.system('pip install --upgrade pip')
+   
+    ##mkdir and cd into
+    os.mkdir('mkdir /opt/django')
+    os.chdir('cd /opt/django/')
+    
+    ##running python 2 but want 3.6
+    os.system('yum install python36')
+    os.system('virtualenv -p python36 django')
+    
+    ##still in 2.7.5 && need to source to 3.6
+    os.system('python --version')
+    os.system('source django/bin/activate')
+    
+    os.system('pip install django')
+    os.system('django-admin --version')
+    
+    ##start project
+    os.system('django-admin startproject project1')
+    
+    ##change ownership from root to a user
+    os.system('chown -R <user> django  ##if you don't know this--: who')
+    os.system('chown -R <user> project1')
+    os.system('su - <user>')
+    
+    ##activate django install and run server
+    os.system('source /opt/django/django/bin/activate')
+    os.system('/opt/django/project1/manage.py runserver 0.0.0.0:8000&')
