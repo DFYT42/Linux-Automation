@@ -7,8 +7,8 @@ os.system('pip install virtualenv')
 os.system('pip install --upgrade pip')
    
 ##mkdir and cd into
-os.mkdir('mkdir /opt/django')
-os.chdir('cd /opt/django/')
+os.mkdir('/opt/django')
+os.chdir('/opt/django/')
     
 ##running python 2 but want 3.6
 os.system('yum install python36')
