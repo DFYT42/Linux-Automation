@@ -25,8 +25,8 @@ os.system('source /opt/django/django/bin/activate ' + \
 ##start project
     
 ##change ownership from root to a user
-os.system('chown -R <user> django  ##if you don't know this--: who')
-os.system('chown -R <user> project1')
-os.system('sudo -u <user>  sh -c source /opt/django/django/bin/activate && python manage.py runserver 0.0.0.0:8000&')
+os.system('chown -R g42dfyt django')  ##if you don't know this--: who
+os.system('chown -R g42dfyt project1')
+os.system('sudo -u g42dfyt  sh -c source /opt/django/django/bin/activate && python manage.py runserver 0.0.0.0:8000&')
     
 ##activate django install and run server
