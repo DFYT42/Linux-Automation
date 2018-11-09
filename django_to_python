@@ -11,7 +11,7 @@ os.mkdir('/opt/django')
 os.chdir('/opt/django/')
     
 ##running python 2 but want 3.6
-os.system('yum install python36')
+os.system('yum -y install python36')
 os.system('virtualenv -p python36 django')
     
 os.system('source /opt/django/django/bin/activate && pip install django')
