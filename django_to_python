@@ -1,32 +1,32 @@
-    #! usr/bin/python
+#! usr/bin/python
     
-    import os
+import os
     
-    os.system('yum -y install python-pip')
-    os.system('pip install virtualenv')
-    os.system('pip install --upgrade pip')
+os.system('yum -y install python-pip')
+os.system('pip install virtualenv')
+os.system('pip install --upgrade pip')
    
-    ##mkdir and cd into
-    os.mkdir('mkdir /opt/django')
-    os.chdir('cd /opt/django/')
+##mkdir and cd into
+os.mkdir('mkdir /opt/django')
+os.chdir('cd /opt/django/')
     
-    ##running python 2 but want 3.6
-    os.system('yum install python36')
-    os.system('virtualenv -p python36 django')
+##running python 2 but want 3.6
+os.system('yum install python36')
+os.system('virtualenv -p python36 django')
     
-    os.system('source /opt/django/django/bin/activate && pip install django')
+os.system('source /opt/django/django/bin/activate && pip install django')
     
-    ##still in 2.7.5 && need to source to 3.6
-    os.chdir('/opt/django')
-    os.system('source /opt/django/django/bin/activate ' + \
-              '&& django-admin --version ' + \
-              '&& django-admin startproject project1')
+##still in 2.7.5 && need to source to 3.6
+os.chdir('/opt/django')
+os.system('source /opt/django/django/bin/activate ' + \
+          '&& django-admin --version ' + \
+          '&& django-admin startproject project1')
     
-    ##start project
+##start project
     
-    ##change ownership from root to a user
-    os.system('chown -R <user> django  ##if you don't know this--: who')
-    os.system('chown -R <user> project1')
-    os.system('sudo -u <user>  sh -c source /opt/django/django/bin/activate && python manage.py runserver 0.0.0.0:8000&')
+##change ownership from root to a user
+os.system('chown -R <user> django  ##if you don't know this--: who')
+os.system('chown -R <user> project1')
+os.system('sudo -u <user>  sh -c source /opt/django/django/bin/activate && python manage.py runserver 0.0.0.0:8000&')
     
-    ##activate django install and run server
+##activate django install and run server
