@@ -31,6 +31,6 @@ os.system('chown -R g42dfyt django')  ##if you don't know this--: who
 print("Good-to-Go")
 os.system('chown -R g42dfyt project1')
 print("Good-to-Go")
-os.system('sudo -u g42dfyt  sh -c source /opt/django/django/bin/activate && python manage.py runserver 0.0.0.0:8000&')
+os.system('sudo -u g42dfyt  sh -c "source /opt/django/django/bin/activate && python manage.py runserver 0.0.0.0:8000&" ')
 print("Good-to-Go")   
 ##activate django install and run server
