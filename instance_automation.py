@@ -20,7 +20,7 @@ zone = "us-east1-b"
 #machine type requested and name
 #machine type helps derive name
 
-name = lower.(input("what is machine name? "))
+name = "artful-sled-217801"
 
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
