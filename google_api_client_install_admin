@@ -12,9 +12,24 @@ pip install oauth2client
 
 exit
 
+#! /usr/bin/python
+
+import argparse
+import os
+import time
+import googleapiclient.discovery
+
+from six.moves import input
 from oauth2client.client import GoogleCredentials
 from googleapiclient import discovery
 
+project="artful-sled-217801"
+zone="us-east1-b"
+credentials = GoogleCredentials.get_application_default()
+compute = discovery.build('compute', 'v1', credentials=credentials)
+
 def list_instances(compute, project, zone):
-    result = compute.instances().list(project=artful-sled-217801, zone=us-east1-b).execute()
+    result = compute.instances().list(project=project, zone=zone).execute()
     return result['items']
+
+print(list_instances(compute,project,zone))
