@@ -26,11 +26,14 @@ def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
     return result['items']
   
-def create_instance(compute, project, zone, name, bucket):
+def create_instance(compute, project, zone, name):
     # Configure the machine
     startup_script = open('startup-script.sh', 'r').read()
-    image_response = compute.image().getFromFamily(project='centos-cloud', family='centos-7').execute()
+    image_response = compute.images().getFromFamily(project='centos-cloud', family='centos-7').execute()
 
+    source_disk_image = image_response['selfLink']
+    machine_type = "zones/%s/machineTypes/f1-micro" % zone
+    
     config = {
         'name': name,
         'machineType': machine_type,
