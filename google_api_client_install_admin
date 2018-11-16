@@ -1,0 +1,20 @@
+#! /usr/bin/python
+
+##admin box, (with python, oauth2, google-api-client), talks to google api with python to 
+##spin up a new instance with apache. quick static server--not as secure and would need mod ssl to be more so
+##directory in var/wwww but dj in /opt. oauth2 allows authentication using cloud credentials.
+
+yum -y install git python-pip
+
+pip install upgrade pip
+pip install google-api-python-client
+pip install oauth2client
+
+exit
+
+from oauth2client.client import GoogleCredentials
+from googleapiclient import discovery
+
+def list_instances(compute, project, zone):
+    result = compute.instances().list(project=artful-sled-217801, zone=us-east1-b).execute()
+    return result['items']
