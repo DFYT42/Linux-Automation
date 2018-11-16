@@ -20,7 +20,7 @@ zone = "us-east1-b"
 #machine type requested and name
 #machine type helps derive name
 
-name = "artful-sled-217801"
+name = "final_project"
 
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
@@ -67,7 +67,7 @@ def create_instance(compute, project, zone, name, bucket):
         #Enable https/http for select instances
         "labels": {
         "http-server": "",
-        "https-server": "",
+        "https-server": ""
         },
         
         "tags": {
