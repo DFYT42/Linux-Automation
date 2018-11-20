@@ -21,7 +21,7 @@ zone = "us-east1-b"
 #machine type requested and name
 #machine type helps derive name
 
-name = "final_project"
+name = "final-project"
 
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
