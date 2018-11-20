@@ -12,7 +12,7 @@ import json
 #from cretae_ldap import create_instance
 
 credentials = GoogleCredentials.get_application_default()
-compute = discovery.build('compute','v1', credentials=credentials)
+compute = googleapiclient.discovery.build('compute','v1', credentials=credentials)
 
 project = "artful-sled-217801"
 zone = "us-east1-b"
