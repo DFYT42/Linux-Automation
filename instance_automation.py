@@ -93,7 +93,7 @@ def create_instance(compute, project, zone, name):
                 'value': 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjWo7qz9uPeAhWmGDQIHSamDqkQjRx6BAgBEAU&url=https%3A%2F%2Fraceraves.com%2Fraces%2Ftrash-panda%2F&psig=AOvVaw3Z9qGM7fzgzgAYb_wZyM8C&ust=1542835990591563'
             }, {
                 'key': 'text',
-                'value': image_caption
+                'value': 'trash pandas rule'
             }, {
                 'key': 'bucket',
                 'value': bucket
