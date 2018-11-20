@@ -87,16 +87,16 @@ def create_instance(compute, project, zone, name):
                 # Startup script is automatically executed by the
                 # instance upon startup.
                 'key': 'startup-script',
-                'value': startup_script
+                'value': 'startup-script.sh'
             }, {
                 'key': 'url',
-                'value': 'https://www.businessinsider.com/trash-panda-subreddit-raccoon-pictures-2015-9'
+                'value': $IMAGE_URL
             }, {
                 'key': 'text',
-                'value': 'trash pandas rule'
+                'value': $TEXT
             }, {
                 'key': 'bucket',
-                'value': bucket
+                'value': $CS_BUCKET
             }]
         }
     }
