@@ -90,13 +90,13 @@ def create_instance(compute, project, zone, name):
                 'value': 'startup-script.sh'
             }, {
                 'key': 'url',
-                'value': $IMAGE_URL
+                'value': 'IMAGE_URL'
             }, {
                 'key': 'text',
-                'value': $TEXT
+                'value': 'TEXT'
             }, {
                 'key': 'bucket',
-                'value': $CS_BUCKET
+                'value': 'CS_BUCKET'
             }]
         }
     }
