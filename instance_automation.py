@@ -89,15 +89,15 @@ def create_instance(compute, project, zone, name):
                 # instance upon startup.
                 'key': 'django_to_python',
                 'value': startup_script
-            }, {
-                'key': 'url',
-                'value': 'IMAGE_URL'
-            }, {
-                'key': 'text',
-                'value': 'TEXT'
-            }, {
-                'key': 'bucket',
-                'value': 'CS_BUCKET'
+           # }, {
+               # 'key': 'url',
+                #'value': 'IMAGE_URL'
+           # }, {
+            #    'key': 'text',
+             #   'value': 'TEXT'
+           # }, {
+            #    'key': 'bucket',
+             #   'value': 'CS_BUCKET'
             }]
         }
     }
