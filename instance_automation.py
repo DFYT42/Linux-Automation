@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/python
 
 ##https://cloud.google.com/compute/docs/tutorials/python-guide
 ##centos7
@@ -21,7 +21,7 @@ zone = "us-east1-b"
 #machine type requested and name
 #machine type helps derive name
 
-name = "final-project"
+name = "final-project-trouble-a"
 
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
@@ -88,7 +88,7 @@ def create_instance(compute, project, zone, name):
                 # Startup script is automatically executed by the
                 # instance upon startup.
                 'key': 'startup-script',
-                'value': 'startup-script.sh'
+                'value': startup_script
             }, {
                 'key': 'url',
                 'value': 'IMAGE_URL'
