@@ -21,7 +21,7 @@ zone = "us-east1-b"
 #machine type requested and name
 #machine type helps derive name
 
-name = "final-project-trouble-a"
+name = "final-project-trouble-b"
 
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
@@ -29,7 +29,7 @@ def list_instances(compute, project, zone):
   
 def create_instance(compute, project, zone, name):
     # Configure the machine
-    startup_script = open('startup-script.sh', 'r').read()
+    startup_script = open('django_to_python.py', 'r').read()
     image_response = compute.images().getFromFamily(project='centos-cloud', family='centos-7').execute()
 
     source_disk_image = image_response['selfLink']
@@ -87,7 +87,7 @@ def create_instance(compute, project, zone, name):
             'items': [{
                 # Startup script is automatically executed by the
                 # instance upon startup.
-                'key': 'startup-script',
+                'key': 'django_to_python',
                 'value': startup_script
             }, {
                 'key': 'url',
