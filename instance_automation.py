@@ -21,7 +21,7 @@ zone = "us-east1-b"
 #machine type requested and name
 #machine type helps derive name
 
-name = "final-project-trouble-b"
+name = "final-project-trouble-c"
 
 def list_instances(compute, project, zone):
     result = compute.instances().list(project=project, zone=zone).execute()
@@ -87,7 +87,7 @@ def create_instance(compute, project, zone, name):
             'items': [{
                 # Startup script is automatically executed by the
                 # instance upon startup.
-                'key': 'django_to_python',
+                'key': 'startup-script',
                 'value': startup_script
            # }, {
                # 'key': 'url',
