@@ -29,7 +29,7 @@ def list_instances(compute, project, zone):
   
 def create_instance(compute, project, zone, name):
     # Configure the machine
-    startup_script = open('startup-script.sh', 'r').read()
+    startup_script = open('startup-script-apache.sh', 'r').read()
     image_response = compute.images().getFromFamily(project='centos-cloud', family='centos-7').execute()
 
     source_disk_image = image_response['selfLink']
