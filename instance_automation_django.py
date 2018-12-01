@@ -29,7 +29,7 @@ def list_instances(compute, project, zone):
   
 def create_instance(compute, project, zone, name):
     # Configure the machine
-    startup_script = open('django_to_python.py', 'r').read()
+    startup_script = open('startup-script-django-to-python.py', 'r').read()
     image_response = compute.images().getFromFamily(project='centos-cloud', family='centos-7').execute()
 
     source_disk_image = image_response['selfLink']
