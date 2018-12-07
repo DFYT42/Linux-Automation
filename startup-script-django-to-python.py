@@ -1,9 +1,9 @@
 #!usr/bin/python
 
 import time
-import os
+#import os
 
-time.sleep(60.0)
+#time.sleep(60.0)
 
 os.system('yum -y install python-pip')
 os.system('pip install virtualenv')
