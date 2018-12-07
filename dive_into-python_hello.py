@@ -2,9 +2,9 @@
 
 print("Hello World!")
 
-impoty sys
+import sys
 
-a = sys.argv[1]
+a = sys.argv[1:]
 
 if a == "1":
   print('a is one')
