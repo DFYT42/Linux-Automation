@@ -1,7 +1,10 @@
 #!usr/bin/python
-    
+
+import time
 import os
-    
+
+time.sleep('60')
+
 os.system('yum -y install python-pip')
 os.system('pip install virtualenv')
 os.system('pip install --upgrade pip')
